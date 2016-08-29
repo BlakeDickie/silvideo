@@ -1,0 +1,13 @@
+---
+spring:
+    data:
+        mongodb.uri: "mongodb://quon/silvideo-dev"
+    freemarker:
+        cache: false
+
+silvideo:
+    security:
+        encryption-password: "testing-non-production"
+        salt: "cde471704994e1cac6e9766cc5970e5d"
+
+#logging.level.org.springframework: DEBUG

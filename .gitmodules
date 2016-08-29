@@ -1,0 +1,3 @@
+[submodule "oath"]
+	path = oath
+	url = git@github.com:BlakeDickie/oath.git
