@@ -3,6 +3,13 @@
 <#macro csrf>
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </#macro>
+
+<#macro flash>
+<#if infoMessage?has_content><div class="alert alert-info" role="alert">${infoMessage}</div></#if>
+<#if errorMessage?has_content><div class="alert alert-danger" role="alert">${errorMessage}</div></#if>
+<#if successMessage?has_content><div class="alert alert-success" role="alert">${successMessage}</div></#if>
+</#macro>
+
 <#macro page title>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +47,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <@security.authorize access="isAuthenticated()">
+                        <li><a href="/mylist/import">MyList Import</a></li>
                         <li><a href="/otp/setup">Settings</a></li>
 
                         <li><form action="/logout" method="POST" class="navbar-form navbar-right">

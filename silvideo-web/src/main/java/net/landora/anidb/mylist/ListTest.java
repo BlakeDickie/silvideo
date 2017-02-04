@@ -18,7 +18,6 @@ import java.util.logging.Logger;
  *
  * @author Blake Dickie
  */
-@Component
 public class ListTest implements CommandLineRunner {
 
     @Autowired
@@ -26,7 +25,7 @@ public class ListTest implements CommandLineRunner {
 
     @Override
     public void run( String... args ) throws Exception {
-        try ( InputStream is = new BufferedInputStream( new FileInputStream( "/home/qhrdev/code/1473657857-8654-76916.tgz" ) ) ) {
+        try ( InputStream is = new BufferedInputStream( new FileInputStream( "/home/bdickie/code/1473657857-8654-76916.tgz" ) ) ) {
             reader.download( is );
         } catch ( Throwable ex ) {
             Logger.getLogger( ListTest.class.getName() ).log( Level.SEVERE, null, ex );

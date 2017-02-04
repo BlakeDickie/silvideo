@@ -89,7 +89,7 @@ public class ListReader {
                 XMLStreamReader reader = XMLInputFactory.newFactory().createXMLStreamReader( is );
                 reader.nextTag();
                 reader.require( XMLStreamReader.START_ELEMENT, null, "my_anime_list" );
-                values = new HashMap<String, String>();
+                values = new HashMap<>();
                 StringBuilder value = new StringBuilder();
 
                 while ( reader.nextTag() != XMLStreamReader.END_ELEMENT ) {
@@ -198,8 +198,8 @@ public class ListReader {
         return getString( name ).equals( "1" );
     }
 
-    private DateTimeFormatter dateTimeFormat;
-    private DateTimeFormatter dateFormat;
+    private final DateTimeFormatter dateTimeFormat;
+    private final DateTimeFormatter dateFormat;
 
     {
         dateTimeFormat = DateTimeFormat.forPattern( "dd.MM.yyyy HH:mm" ).withZoneUTC();
@@ -282,7 +282,7 @@ public class ListReader {
 
         AnimeName name = new AnimeName();
         String language = getString( "LanguageName" );
-        String converted = languageConvert.get( language );
+        String converted = LANGUAGE_CONVERT.get( language );
 
         name.setLanguage( converted == null ? language : converted );
         name.setType( getString( "TitleTypeName" ) );
@@ -314,6 +314,7 @@ public class ListReader {
         anime.getCategories().add( categoryWeight );
 
     }
+
     private void saveLastAnime() {
         if ( anime == null ) {
             return;
@@ -322,18 +323,18 @@ public class ListReader {
         anime = null;
     }
 
-    private final static Map<String, String> languageConvert;
+    private final static Map<String, String> LANGUAGE_CONVERT;
 
     static {
-        languageConvert = new HashMap<>();
+        LANGUAGE_CONVERT = new HashMap<>();
 
-        languageConvert.put( "english", "en" );
-        languageConvert.put( "japanese", "ja" );
-        languageConvert.put( "japanese (transcription)", "x-jat" );
-        languageConvert.put( "spanish", "es" );
-        languageConvert.put( "arabic", "ar" );
-        languageConvert.put( "brazilian portuguese", "pt-BR" );
-        languageConvert.put( "chinese (simplified)", "zh-Hans" );
+        LANGUAGE_CONVERT.put( "english", "en" );
+        LANGUAGE_CONVERT.put( "japanese", "ja" );
+        LANGUAGE_CONVERT.put( "japanese (transcription)", "x-jat" );
+        LANGUAGE_CONVERT.put( "spanish", "es" );
+        LANGUAGE_CONVERT.put( "arabic", "ar" );
+        LANGUAGE_CONVERT.put( "brazilian portuguese", "pt-BR" );
+        LANGUAGE_CONVERT.put( "chinese (simplified)", "zh-Hans" );
 
     }
 
