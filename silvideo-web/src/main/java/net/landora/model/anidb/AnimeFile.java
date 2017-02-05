@@ -59,7 +59,7 @@ public class AnimeFile implements java.io.Serializable {
         return censored;
     }
 
-    public void setCensored(Boolean censored) {
+    public void setCensored( Boolean censored ) {
         this.censored = censored;
     }
 
@@ -67,7 +67,7 @@ public class AnimeFile implements java.io.Serializable {
         return crcValid;
     }
 
-    public void setCrcValid(Boolean crcValid) {
+    public void setCrcValid( Boolean crcValid ) {
         this.crcValid = crcValid;
     }
 
@@ -75,7 +75,7 @@ public class AnimeFile implements java.io.Serializable {
         return getAnime().findEpisodeById( getEpisodeId() );
     }
 
-    public void setEpisode(AnimeEpisode episode) {
+    public void setEpisode( AnimeEpisode episode ) {
         setAnime( episode.getAnime() );
         setEpisodeId( episode.getEpisodeId() );
     }
@@ -84,7 +84,7 @@ public class AnimeFile implements java.io.Serializable {
         return fileId;
     }
 
-    public void setFileId(int fileId) {
+    public void setFileId( int fileId ) {
         this.fileId = fileId;
     }
 
@@ -92,7 +92,7 @@ public class AnimeFile implements java.io.Serializable {
         return group;
     }
 
-    public void setGroup(AnimeGroup group) {
+    public void setGroup( AnimeGroup group ) {
         this.group = group;
     }
 
@@ -100,7 +100,7 @@ public class AnimeFile implements java.io.Serializable {
         return version;
     }
 
-    public void setVersion(Integer version) {
+    public void setVersion( Integer version ) {
         this.version = version;
     }
 
@@ -108,7 +108,7 @@ public class AnimeFile implements java.io.Serializable {
         return ed2k;
     }
 
-    public void setEd2k(String ed2k) {
+    public void setEd2k( String ed2k ) {
         this.ed2k = ed2k;
     }
 
@@ -116,7 +116,7 @@ public class AnimeFile implements java.io.Serializable {
         return size;
     }
 
-    public void setSize(Long size) {
+    public void setSize( Long size ) {
         this.size = size;
     }
 
@@ -124,34 +124,34 @@ public class AnimeFile implements java.io.Serializable {
         return generic;
     }
 
-    public void setGeneric(boolean generic) {
+    public void setGeneric( boolean generic ) {
         this.generic = generic;
     }
 
-    public void setState(int state) {
+    public void setState( int state ) {
         crcValid = null;
         version = null;
         censored = null;
 
-        if ((state & FILE_CRCOK) != 0) {
+        if ( ( state & FILE_CRCOK ) != 0 ) {
             crcValid = true;
-        } else if ((state & FILE_CRCERR) != 0) {
+        } else if ( ( state & FILE_CRCERR ) != 0 ) {
             crcValid = false;
         }
 
-        if ((state & FILE_ISV2) != 0) {
+        if ( ( state & FILE_ISV2 ) != 0 ) {
             version = 2;
-        } else if ((state & FILE_ISV3) != 0) {
+        } else if ( ( state & FILE_ISV3 ) != 0 ) {
             version = 3;
-        } else if ((state & FILE_ISV4) != 0) {
+        } else if ( ( state & FILE_ISV4 ) != 0 ) {
             version = 4;
-        } else if ((state & FILE_ISV5) != 0) {
+        } else if ( ( state & FILE_ISV5 ) != 0 ) {
             version = 5;
         }
 
-        if ((state & FILE_CEN) != 0) {
+        if ( ( state & FILE_CEN ) != 0 ) {
             censored = true;
-        } else if ((state & FILE_UNC) != 0) {
+        } else if ( ( state & FILE_UNC ) != 0 ) {
             censored = false;
         }
     }
@@ -166,15 +166,15 @@ public class AnimeFile implements java.io.Serializable {
     private static final int FILE_CEN = 128;
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals( Object obj ) {
+        if ( obj == null ) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if ( getClass() != obj.getClass() ) {
             return false;
         }
         final AnimeFile other = (AnimeFile) obj;
-        if (this.fileId != other.fileId) {
+        if ( this.fileId != other.fileId ) {
             return false;
         }
         return true;
@@ -189,9 +189,9 @@ public class AnimeFile implements java.io.Serializable {
 
     @Override
     public String toString() {
-        if (isGeneric()) {
+        if ( isGeneric() ) {
             return String.format( "Generic: %s", getEpisode().toString() );
-        } else if (group == null) {
+        } else if ( group == null ) {
             return String.format( "No Group: %s", getEpisode().toString() );
         } else {
             return String.format( "%s: %s", group.getShortName(), getEpisode().toString() );
@@ -202,7 +202,7 @@ public class AnimeFile implements java.io.Serializable {
         return fileType;
     }
 
-    public void setFileType(String fileType) {
+    public void setFileType( String fileType ) {
         this.fileType = fileType;
     }
 
@@ -210,7 +210,7 @@ public class AnimeFile implements java.io.Serializable {
         return source;
     }
 
-    public void setSource(String source) {
+    public void setSource( String source ) {
         this.source = source;
     }
 
@@ -218,7 +218,7 @@ public class AnimeFile implements java.io.Serializable {
         return videoCodec;
     }
 
-    public void setVideoCodec(String videoCodec) {
+    public void setVideoCodec( String videoCodec ) {
         this.videoCodec = videoCodec;
     }
 
@@ -226,7 +226,7 @@ public class AnimeFile implements java.io.Serializable {
         return videoResolution;
     }
 
-    public void setVideoResolution(String videoResolution) {
+    public void setVideoResolution( String videoResolution ) {
         this.videoResolution = videoResolution;
     }
 
@@ -234,7 +234,7 @@ public class AnimeFile implements java.io.Serializable {
         return currentSaveRevision;
     }
 
-    public void setCurrentSaveRevision(int currentSaveRevision) {
+    public void setCurrentSaveRevision( int currentSaveRevision ) {
         this.currentSaveRevision = currentSaveRevision;
     }
 
@@ -269,6 +269,5 @@ public class AnimeFile implements java.io.Serializable {
     public void setEpisodeId( int episodeId ) {
         this.episodeId = episodeId;
     }
-
 
 }

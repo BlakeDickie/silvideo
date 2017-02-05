@@ -15,11 +15,11 @@ import javax.servlet.ServletContext;
  * @author bdickie
  */
 @Configuration
-public class SecurityApplicationInitializer  extends AbstractSecurityWebApplicationInitializer {
+public class SecurityApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 
-	@Override
-	protected void beforeSpringSecurityFilterChain(ServletContext servletContext) {
-		insertFilters(servletContext, new MultipartFilter());
-	}
-    
+    @Override
+    protected void beforeSpringSecurityFilterChain( ServletContext servletContext ) {
+        insertFilters( servletContext, new MultipartFilter() );
+    }
+
 }

@@ -29,7 +29,6 @@ public class MongoUserSource implements UserDetailsService {
             throw new UsernameNotFoundException( String.format( "Username %s not found.", username ) );
         }
 
-
         return new OTPUserDetailsImpl( u );
     }
 

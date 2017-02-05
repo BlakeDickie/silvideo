@@ -43,7 +43,6 @@ public class AnimeListItem implements java.io.Serializable {
         this.addedDate = addedDate;
     }
 
-
     public AnimeListState getState() {
         return state;
     }
@@ -63,7 +62,6 @@ public class AnimeListItem implements java.io.Serializable {
     public void setStateId( int stateId ) {
         setState( AnimeListState.lookupType( stateId ) );
     }
-
 
     public AnimeListFileState getFileState() {
         return fileState;

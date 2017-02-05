@@ -21,10 +21,11 @@ package net.landora.model.anidb;
  * @author bdickie
  */
 public class AnimeGroup implements java.io.Serializable {
+
     private String id;
     private int groupId;
     private String shortName;
-    private String lostName;
+    private String longName;
     private String url;
     private boolean fullyLoaded;
 
@@ -35,23 +36,23 @@ public class AnimeGroup implements java.io.Serializable {
         return groupId;
     }
 
-    public void setGroupId(int groupId) {
+    public void setGroupId( int groupId ) {
         this.groupId = groupId;
     }
 
-    public String getLostName() {
-        return lostName;
+    public String getLongName() {
+        return longName;
     }
 
-    public void setLostName(String lostName) {
-        this.lostName = lostName;
+    public void setLongName( String longName ) {
+        this.longName = longName;
     }
 
     public String getShortName() {
         return shortName;
     }
 
-    public void setShortName(String shortName) {
+    public void setShortName( String shortName ) {
         this.shortName = shortName;
     }
 
@@ -59,7 +60,7 @@ public class AnimeGroup implements java.io.Serializable {
         return fullyLoaded;
     }
 
-    public void setFullyLoaded(boolean fullyLoaded) {
+    public void setFullyLoaded( boolean fullyLoaded ) {
         this.fullyLoaded = fullyLoaded;
     }
 
@@ -67,20 +68,20 @@ public class AnimeGroup implements java.io.Serializable {
         return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl( String url ) {
         this.url = url;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals( Object obj ) {
+        if ( obj == null ) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if ( getClass() != obj.getClass() ) {
             return false;
         }
         final AnimeGroup other = (AnimeGroup) obj;
-        if (this.groupId != other.groupId) {
+        if ( this.groupId != other.groupId ) {
             return false;
         }
         return true;
@@ -105,6 +106,5 @@ public class AnimeGroup implements java.io.Serializable {
     public void setId( String id ) {
         this.id = id;
     }
-
 
 }

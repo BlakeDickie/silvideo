@@ -20,8 +20,8 @@ public class OtpAuthenticationProvider extends DaoAuthenticationProvider {
 
     @Override
     protected Authentication createSuccessAuthentication( Object principal, Authentication authentication, UserDetails user ) {
-        PreOtpAuthentication result = new PreOtpAuthentication(                                            principal, authentication.getCredentials(),
-                                            user.getAuthorities() );
+        PreOtpAuthentication result = new PreOtpAuthentication( principal, authentication.getCredentials(),
+                                                                user.getAuthorities() );
         result.setDetails( authentication.getDetails() );
 
         if ( user instanceof OTPUserDetails ) {
@@ -29,8 +29,9 @@ public class OtpAuthenticationProvider extends DaoAuthenticationProvider {
             if ( otpUserDetails.getEncryptedTotpSecretKey() == null ) {
                 result.passToken();
             }
-        } else
+        } else {
             result.passToken();
+        }
 
         return result;
     }

@@ -35,7 +35,7 @@ public class AnimeCategoryWeight implements java.io.Serializable {
         return category;
     }
 
-    public void setCategory(AnimeCategory category) {
+    public void setCategory( AnimeCategory category ) {
         this.category = category;
     }
 
@@ -43,21 +43,21 @@ public class AnimeCategoryWeight implements java.io.Serializable {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight( int weight ) {
         this.weight = weight;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals( Object obj ) {
+        if ( obj == null ) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if ( getClass() != obj.getClass() ) {
             return false;
         }
         final AnimeCategoryWeight other = (AnimeCategoryWeight) obj;
 
-        if (this.category != other.category && (this.category == null || !this.category.equals(other.category))) {
+        if ( this.category != other.category && ( this.category == null || !this.category.equals( other.category ) ) ) {
             return false;
         }
         return true;
@@ -66,13 +66,13 @@ public class AnimeCategoryWeight implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 73 * hash + (this.category != null ? this.category.hashCode() : 0);
+        hash = 73 * hash + ( this.category != null ? this.category.hashCode() : 0 );
         return hash;
     }
 
     @Override
     public String toString() {
-        return String.format("%s [%d]", category.getName(), weight);
+        return String.format( "%s [%d]", category.getName(), weight );
     }
 
 }

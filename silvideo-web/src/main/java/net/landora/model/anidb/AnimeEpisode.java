@@ -63,34 +63,34 @@ public class AnimeEpisode implements java.io.Serializable {
         return episodeId;
     }
 
-    public void setEpisodeId(int episodeId) {
+    public void setEpisodeId( int episodeId ) {
         this.episodeId = episodeId;
     }
 
-    private static final Pattern EPNAME_PATTERN = Pattern.compile("([SCTPO]?)(\\d+)", Pattern.CASE_INSENSITIVE);
+    private static final Pattern EPNAME_PATTERN = Pattern.compile( "([SCTPO]?)(\\d+)", Pattern.CASE_INSENSITIVE );
 
     public String getEpisodeNumber() {
-        Matcher m = EPNAME_PATTERN.matcher(episodeNumber);
-        if (m.matches()) {
+        Matcher m = EPNAME_PATTERN.matcher( episodeNumber );
+        if ( m.matches() ) {
             Integer numEps = null;
-            if (m.group(1).length() == 0) {
+            if ( m.group( 1 ).length() == 0 ) {
                 numEps = anime.getEpisodeCount();
             }
 
-            if (numEps == null || numEps.intValue() < 1) {
+            if ( numEps == null || numEps.intValue() < 1 ) {
                 numEps = 99;
             }
 
             NumberFormat format = NumberFormat.getInstance();
-            format.setGroupingUsed(false);
-            format.setMinimumIntegerDigits((int) Math.log10(numEps) + 1);;
-            return m.group(1) + format.format(Integer.parseInt(m.group(2)));
+            format.setGroupingUsed( false );
+            format.setMinimumIntegerDigits( (int) Math.log10( numEps ) + 1 );;
+            return m.group( 1 ) + format.format( Integer.parseInt( m.group( 2 ) ) );
         }
 
         return episodeNumber;
     }
 
-    public void setEpisodeNumber(String episodeNumber) {
+    public void setEpisodeNumber( String episodeNumber ) {
         this.episodeNumber = episodeNumber;
     }
 
@@ -98,7 +98,7 @@ public class AnimeEpisode implements java.io.Serializable {
         return length;
     }
 
-    public void setLength(Integer length) {
+    public void setLength( Integer length ) {
         this.length = length;
     }
 
@@ -106,7 +106,7 @@ public class AnimeEpisode implements java.io.Serializable {
         return nameEnglish;
     }
 
-    public void setNameEnglish(String nameEnglish) {
+    public void setNameEnglish( String nameEnglish ) {
         this.nameEnglish = nameEnglish;
     }
 
@@ -114,7 +114,7 @@ public class AnimeEpisode implements java.io.Serializable {
         return nameKanji;
     }
 
-    public void setNameKanji(String nameKanji) {
+    public void setNameKanji( String nameKanji ) {
         this.nameKanji = nameKanji;
     }
 
@@ -122,7 +122,7 @@ public class AnimeEpisode implements java.io.Serializable {
         return nameRomaji;
     }
 
-    public void setNameRomaji(String nameRomaji) {
+    public void setNameRomaji( String nameRomaji ) {
         this.nameRomaji = nameRomaji;
     }
 
@@ -130,7 +130,7 @@ public class AnimeEpisode implements java.io.Serializable {
         return rating;
     }
 
-    public void setRating(Float rating) {
+    public void setRating( Float rating ) {
         this.rating = rating;
     }
 
@@ -138,20 +138,20 @@ public class AnimeEpisode implements java.io.Serializable {
         return ratingVotes;
     }
 
-    public void setRatingVotes(Integer ratingVotes) {
+    public void setRatingVotes( Integer ratingVotes ) {
         this.ratingVotes = ratingVotes;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals( Object obj ) {
+        if ( obj == null ) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if ( getClass() != obj.getClass() ) {
             return false;
         }
         final AnimeEpisode other = (AnimeEpisode) obj;
-        if (this.episodeId != other.episodeId) {
+        if ( this.episodeId != other.episodeId ) {
             return false;
         }
         return true;
@@ -166,12 +166,12 @@ public class AnimeEpisode implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return String.format("%s: %s", episodeNumber, (nameEnglish != null ? nameEnglish : nameRomaji));
+        return String.format( "%s: %s", episodeNumber, ( nameEnglish != null ? nameEnglish : nameRomaji ) );
     }
 
     public Integer getNormalEpisodeNumber() {
-        if (Character.isDigit(episodeNumber.charAt(0))) {
-            return Integer.parseInt(episodeNumber);
+        if ( Character.isDigit( episodeNumber.charAt( 0 ) ) ) {
+            return Integer.parseInt( episodeNumber );
         } else {
             return null;
         }

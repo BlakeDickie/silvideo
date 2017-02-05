@@ -16,7 +16,6 @@
  */
 package net.landora.model.anidb;
 
-
 /**
  *
  * @author bdickie
@@ -44,12 +43,12 @@ public enum AnimeListState {
         this.stateId = stateId;
         StringBuilder buffer = new StringBuilder();
         name = name();
-        for (int i = 0; i < name.length(); i++) {
-            char c = name.charAt(i);
-            if (i > 0 && java.lang.Character.isUpperCase(c)) {
-                buffer.append(" ");
+        for ( int i = 0; i < name.length(); i++ ) {
+            char c = name.charAt( i );
+            if ( i > 0 && java.lang.Character.isUpperCase( c ) ) {
+                buffer.append( " " );
             }
-            buffer.append(c);
+            buffer.append( c );
         }
         name = buffer.toString();
     }
@@ -62,16 +61,15 @@ public enum AnimeListState {
         return stateId;
     }
 
-    public static AnimeListState lookupType(int id) {
+    public static AnimeListState lookupType( int id ) {
 
-        for (AnimeListState type : values()) {
-            if (type.getStateId() == id) {
+        for ( AnimeListState type : values() ) {
+            if ( type.getStateId() == id ) {
                 return type;
             }
         }
         return null;
     }
-
 
     @Override
     public String toString() {

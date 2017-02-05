@@ -26,6 +26,7 @@ import java.util.List;
  * @author bdickie
  */
 public class Anime implements java.io.Serializable {
+
     private String id;
     private int animeId;
     private DateTime lastLoaded;

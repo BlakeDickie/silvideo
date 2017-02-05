@@ -40,7 +40,7 @@ public class AnimeCategory implements java.io.Serializable {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription( String description ) {
         this.description = description;
     }
 
@@ -48,7 +48,7 @@ public class AnimeCategory implements java.io.Serializable {
         return hentai;
     }
 
-    public void setHentai(boolean hentai) {
+    public void setHentai( boolean hentai ) {
         this.hentai = hentai;
     }
 
@@ -60,13 +60,11 @@ public class AnimeCategory implements java.io.Serializable {
         this.categoryId = categoryId;
     }
 
-
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName( String name ) {
         this.name = name;
     }
 
@@ -74,16 +72,16 @@ public class AnimeCategory implements java.io.Serializable {
         return parentCategory;
     }
 
-    public void setParentCategory(AnimeCategory parentCategory) {
+    public void setParentCategory( AnimeCategory parentCategory ) {
         this.parentCategory = parentCategory;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals( Object obj ) {
+        if ( obj == null ) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if ( getClass() != obj.getClass() ) {
             return false;
         }
         final AnimeCategory other = (AnimeCategory) obj;

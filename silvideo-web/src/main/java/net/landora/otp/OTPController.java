@@ -83,7 +83,6 @@ public class OTPController {
 
         String encryptString = BaseEncoding.base32().encode( encryptedBytes );
 
-
         model.addAttribute( "keyString", encryptString );
 
         return "otp-new-key";

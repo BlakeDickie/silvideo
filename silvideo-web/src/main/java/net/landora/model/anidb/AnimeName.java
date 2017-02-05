@@ -29,12 +29,11 @@ public class AnimeName implements java.io.Serializable {
     public AnimeName() {
     }
 
-
     public String getLanguage() {
         return language;
     }
 
-    public void setLanguage(String language) {
+    public void setLanguage( String language ) {
         this.language = language;
     }
 
@@ -42,7 +41,7 @@ public class AnimeName implements java.io.Serializable {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName( String name ) {
         this.name = name;
     }
 
@@ -50,27 +49,27 @@ public class AnimeName implements java.io.Serializable {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType( String type ) {
         this.type = type;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals( Object obj ) {
+        if ( obj == null ) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if ( getClass() != obj.getClass() ) {
             return false;
         }
         final AnimeName other = (AnimeName) obj;
 
-        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+        if ( ( this.name == null ) ? ( other.name != null ) : !this.name.equals( other.name ) ) {
             return false;
         }
-        if ((this.type == null) ? (other.type != null) : !this.type.equals(other.type)) {
+        if ( ( this.type == null ) ? ( other.type != null ) : !this.type.equals( other.type ) ) {
             return false;
         }
-        if ((this.language == null) ? (other.language != null) : !this.language.equals(other.language)) {
+        if ( ( this.language == null ) ? ( other.language != null ) : !this.language.equals( other.language ) ) {
             return false;
         }
         return true;
@@ -79,15 +78,15 @@ public class AnimeName implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 19 * hash + (this.name != null ? this.name.hashCode() : 0);
-        hash = 19 * hash + (this.type != null ? this.type.hashCode() : 0);
-        hash = 19 * hash + (this.language != null ? this.language.hashCode() : 0);
+        hash = 19 * hash + ( this.name != null ? this.name.hashCode() : 0 );
+        hash = 19 * hash + ( this.type != null ? this.type.hashCode() : 0 );
+        hash = 19 * hash + ( this.language != null ? this.language.hashCode() : 0 );
         return hash;
     }
 
     @Override
     public String toString() {
-        return String.format("%s [%s:%s]", name, language, type);
+        return String.format( "%s [%s:%s]", name, language, type );
     }
 
 }

@@ -408,7 +408,7 @@ public class ListReader {
                 if ( group == null ) {
                     group = new AnimeGroup();
                     group.setGroupId( groupId );
-                    group.setLostName( getString( "GName" ) );
+                    group.setLongName( getString( "GName" ) );
                     group.setShortName( getString( "GShortName" ) );
                     group = animeGroupRepository.save( group );
                 }

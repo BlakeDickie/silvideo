@@ -5,6 +5,7 @@
  */
 package net.landora.anidb.mylist;
 
+import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,21 +38,22 @@ public class MyListController {
                 model.addAttribute( MODEL_ERROR, "Import Errored" );
                 break;
             case Running:
-                return "redirect:/mylist/import-status";
+                model.addAttribute( MODEL_INFO, "Import Running" );
+                return "mylist_processing";
         }
 
         return "mylist_file_select";
     }
 
     @PostMapping( "/mylist/import" )
-    public String mylistFileImport( @RequestParam( "file" ) MultipartFile file ) {
+    public String mylistFileImport( @RequestParam( "file" ) MultipartFile file, Model model ) throws IOException {
 
-        return "mylist_file_select";
-    }
+        byte[] data = file.getBytes();
 
-    @GetMapping( "/mylist/import-status" )
-    public String mylistStatus() {
-        return "mylist_file_select";
+        boolean result = true;
+        manager.queueImport( data );
+
+        return "redirect:/mylist/import";
     }
 
 }

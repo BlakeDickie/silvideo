@@ -10,13 +10,18 @@
 <#if successMessage?has_content><div class="alert alert-success" role="alert">${successMessage}</div></#if>
 </#macro>
 
-<#macro page title>
+<#macro page title refresh=0>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <#if refresh?number gt 0>
+            <meta http-equiv="refresh" content="${refresh}" >
+        </#if>
+
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>SilVideo - ${title}</title>
 
