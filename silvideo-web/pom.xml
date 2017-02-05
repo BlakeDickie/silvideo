@@ -5,12 +5,11 @@
 
 
     <parent>
-
-    <groupId>net.landora</groupId>
-    <artifactId>silvideo-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+        <groupId>net.landora</groupId>
+        <artifactId>silvideo-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    
+
     <groupId>net.landora</groupId>
     <artifactId>silvideo-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -100,6 +99,25 @@
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
             <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jadira.usertype</groupId>
+            <artifactId>usertype.jodatime</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.xeustechnologies</groupId>
+            <artifactId>jtar</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
         </dependency>
     </dependencies>
 

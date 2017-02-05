@@ -94,5 +94,4 @@ public class OTPUserDetailsImpl implements OTPUserDetails, Serializable {
         return true;
     }
 
-
 }

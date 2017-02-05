@@ -1,6 +1,7 @@
 <#ftl strip_whitespace = true>
 <#import "common/common.ftl" as c/>
 <@c.page title="Login">
+<@c.flash />
 <form action="/login" method="post">
     <div class="form-group">
         <label for="username">Username</label>

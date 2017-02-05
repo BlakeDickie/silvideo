@@ -44,5 +44,4 @@ public class PreOtpAuthentication extends UsernamePasswordAuthenticationToken {
         return tokenPassed;
     }
 
-
 }
