@@ -11,3 +11,19 @@ silvideo:
         salt: "cde471704994e1cac6e9766cc5970e5d"
 
 #logging.level.org.springframework: DEBUG
+google:
+    client:
+        clientId: 765336609845-vk56r5rmpdduvk8b451ampll41a010so.apps.googleusercontent.com
+        clientSecret: zgEoj2XbFAHRYBqAjjx_kqUn
+        accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+        userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+        clientAuthenticationScheme: form
+        tokenName: oauth_token
+        authenticationScheme: query
+        scope:
+            - openid
+            - email
+            - profile
+    resource:
+        userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+        prefer-token-info: false

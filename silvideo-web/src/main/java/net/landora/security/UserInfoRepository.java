@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.landora.otp.impl;
+package net.landora.security;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
  *
- * @author Blake Dickie
+ * @author bdickie
  */
-public interface UserRepository extends MongoRepository<User, String> {
+public interface UserInfoRepository extends MongoRepository<UserInfo, String> {
 
-    public User findByUsername( String username );
+    public UserInfo findByGoogleSubject( String googleSubject );
+
 }

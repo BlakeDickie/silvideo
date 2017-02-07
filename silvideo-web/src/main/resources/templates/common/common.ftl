@@ -19,7 +19,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <#if refresh?number gt 0>
-            <meta http-equiv="refresh" content="${refresh}" >
+        <meta http-equiv="refresh" content="${refresh}" >
         </#if>
 
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -47,18 +47,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         </button>
-                    <a class="navbar-brand" href="#">SilVideo</a>
+                    <a class="navbar-brand" href="/">SilVideo</a>
                     </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <@security.authorize access="isAuthenticated()">
-                        <li><a href="/mylist/import">MyList Import</a></li>
-                        <li><a href="/otp/setup">Settings</a></li>
 
+                        <@security.authorize access="hasRole('APPROVED')">
+                        <li><a href="/mylist/import">MyList Import</a></li>
+                        </@security.authorize>
+
+                        <@security.authorize access="isAuthenticated()">
                         <li><form action="/logout" method="POST" class="navbar-form navbar-right">
                                 <button type="submit" class="btn btn-link">Logout</button>
                         <@c.csrf />
                                 </form></li>
+                        </@security.authorize>
+
+                        <@security.authorize access="! isAuthenticated()">
+                        <li><a href="/login">Login</a></li>
                         </@security.authorize>
                         </ul>
                     </div>
