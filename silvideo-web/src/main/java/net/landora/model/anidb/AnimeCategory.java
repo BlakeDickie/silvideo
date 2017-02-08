@@ -17,11 +17,13 @@
 package net.landora.model.anidb;
 
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author bdickie
  */
+@Document
 public class AnimeCategory implements java.io.Serializable {
 
     private String id;

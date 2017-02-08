@@ -18,6 +18,7 @@ package net.landora.model.anidb;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
+import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import java.util.List;
  *
  * @author bdickie
  */
+@Document
 public class Anime implements java.io.Serializable {
 
     private String id;

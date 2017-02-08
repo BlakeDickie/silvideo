@@ -17,11 +17,13 @@
 package net.landora.model.anidb;
 
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author bdickie
  */
+@Document
 public class AnimeFile implements java.io.Serializable {
 
     public static final int SAVE_REVISION = 2;

@@ -5,16 +5,20 @@
  */
 package net.landora.security;
 
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Objects;
 
 /**
  *
  * @author bdickie
  */
+@Document
 public class UserInfo implements java.io.Serializable {
 
     private String id;
 
+    @Indexed( unique = true )
     private String googleSubject;
 
     private String name;

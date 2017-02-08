@@ -16,10 +16,13 @@
  */
 package net.landora.model.anidb;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  *
  * @author bdickie
  */
+@Document
 public class AnimeGroup implements java.io.Serializable {
 
     private String id;
