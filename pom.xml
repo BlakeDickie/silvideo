@@ -62,7 +62,6 @@
     </properties>
 
     <modules>
-        <module>oath</module>
         <module>silvideo-web</module>
     </modules>
 
