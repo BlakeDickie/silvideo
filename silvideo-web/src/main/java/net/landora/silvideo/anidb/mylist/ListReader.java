@@ -142,7 +142,6 @@ public class ListReader {
     private DateTime exportDate;
 
     private void handleTable( String tableName ) throws ParseException {
-        System.out.println( tableName );
         if ( tableName.equals( "anime" ) ) {
             handleAnime();
         } else if ( tableName.equals( "title" ) ) {
@@ -302,6 +301,9 @@ public class ListReader {
         if ( category == null ) {
             category = new AnimeCategory();
             category.setCategoryId( categoryId );
+        }
+
+        if ( category.getName() == null ) {
             category.setName( getString( "CategoryName" ) );
             category.setHentai( getBoolean( "CategoryHentai" ) );
             category = animeCategoryRepository.save( category );

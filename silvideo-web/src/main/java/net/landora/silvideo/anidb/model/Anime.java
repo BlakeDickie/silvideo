@@ -18,6 +18,7 @@ package net.landora.silvideo.anidb.model;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,7 @@ import java.util.List;
 public class Anime implements java.io.Serializable {
 
     private String id;
+    @Indexed
     private int animeId;
     private DateTime lastLoaded;
     private String nameMain;
@@ -54,7 +56,7 @@ public class Anime implements java.io.Serializable {
 
     private List<AnimeEpisode> episodes;
     private List<AnimeCategoryWeight> categories;
-//    private List<AnimeRelation> relations;
+    private List<AnimeRelation> relations;
 
     public Anime() {
         names = new ArrayList<>();
@@ -62,13 +64,6 @@ public class Anime implements java.io.Serializable {
         categories = new ArrayList<>();
     }
 
-//    public List<AnimeName> getNames() {
-//        return names;
-//    }
-//
-//    public void setNames(List<AnimeName> names) {
-//        this.names = names;
-//    }
     public List<AnimeCategoryWeight> getCategories() {
         return categories;
     }
@@ -76,14 +71,14 @@ public class Anime implements java.io.Serializable {
     public void setCategories( List<AnimeCategoryWeight> categories ) {
         this.categories = categories;
     }
-//
-//    public List<AnimeRelation> getRelations() {
-//        return relations;
-//    }
-//
-//    public void setRelations(List<AnimeRelation> relations) {
-//        this.relations = relations;
-//    }
+
+    public List<AnimeRelation> getRelations() {
+        return relations;
+    }
+
+    public void setRelations( List<AnimeRelation> relations ) {
+        this.relations = relations;
+    }
 
     public int getAnimeId() {
         return animeId;

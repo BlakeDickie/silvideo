@@ -4,6 +4,15 @@ spring:
         mongodb.uri: "mongodb://quon/silvideo-dev"
     freemarker:
         cache: false
+    rabbitmq:
+        host: "quon"
+        username: "silvideo"
+        password: "password"
+        virtual-host: "silvideo-dev"
+
+logging:
+    level:
+        net.landora.silvideo.anidb.api.impl.udp: "TRACE"
 
 silvideo:
     security:

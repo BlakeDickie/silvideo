@@ -9,3 +9,16 @@ anidb:
     http:
         client-name: "gsvideohttp"
         client-version: 1
+    udp:
+        host: "api.anidb.net"
+        port: 9000
+        timeout: 10000
+        delay: 2000
+        auto-logout-delay: 300000
+        quick-initial-calls: 3
+        client-name: "gsvideo"
+        client-version: 1
+        listen-port: 27779
+    mapping:
+        url: "https://raw.githubusercontent.com/ScudLee/anime-lists/master/anime-list.xml"
+

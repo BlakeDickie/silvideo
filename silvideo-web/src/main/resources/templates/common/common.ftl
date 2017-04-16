@@ -54,6 +54,7 @@
 
                         <@security.authorize access="hasRole('APPROVED')">
                         <li><a href="/mylist/import">MyList Import</a></li>
+                        <li><a href="/settings">Settings</a></li>
                         </@security.authorize>
 
                         <@security.authorize access="isAuthenticated()">

@@ -7,9 +7,12 @@ package net.landora.silvideo.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 /**
  *
@@ -17,11 +20,18 @@ import java.util.concurrent.Executors;
  */
 @Configuration
 @EnableAsync
+@EnableScheduling
 public class ExecutorConfig {
 
     @Bean
+    @Primary
     public ExecutorService executor() {
         return Executors.newCachedThreadPool();
+    }
+
+    @Bean
+    public ScheduledExecutorService scheduledExecutor() {
+        return Executors.newScheduledThreadPool( 3 );
     }
 
 }
