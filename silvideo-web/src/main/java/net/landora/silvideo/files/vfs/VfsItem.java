@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.landora.silvideo.files.model;
-
-import org.springframework.data.mongodb.repository.MongoRepository;
+package net.landora.silvideo.files.vfs;
 
 /**
  *
  * @author bdickie
  */
-public interface NfsRootRepository extends MongoRepository<NfsRoot, String> {
+public interface VfsItem {
+
+    public String getName();
+
+    public boolean isFile();
 
 }

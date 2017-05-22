@@ -63,6 +63,7 @@
 
     <modules>
         <module>silvideo-web</module>
+        <module>Ed2kHasher</module>
     </modules>
 
 </project>

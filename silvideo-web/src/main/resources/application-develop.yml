@@ -1,11 +1,11 @@
 ---
 spring:
     data:
-        mongodb.uri: "mongodb://quon/silvideo-dev"
+        mongodb.uri: "mongodb://localhost/silvideo-dev"
     freemarker:
         cache: false
     rabbitmq:
-        host: "quon"
+        host: "localhost"
         username: "silvideo"
         password: "password"
         virtual-host: "silvideo-dev"
