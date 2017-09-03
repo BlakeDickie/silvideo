@@ -5,6 +5,9 @@
  */
 package net.landora.silvideo.files.model;
 
+import net.landora.silvideo.system.Computer;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+
 /**
  *
  * @author bdickie
@@ -12,6 +15,8 @@ package net.landora.silvideo.files.model;
 public class LocalRootConnection extends RootConnection {
 
     private String path;
+    @DBRef
+    private Computer computer;
 
     public LocalRootConnection() {
     }
@@ -22,6 +27,14 @@ public class LocalRootConnection extends RootConnection {
 
     public void setPath( String path ) {
         this.path = path;
+    }
+
+    public Computer getComputer() {
+        return computer;
+    }
+
+    public void setComputer( Computer computer ) {
+        this.computer = computer;
     }
 
     @Override

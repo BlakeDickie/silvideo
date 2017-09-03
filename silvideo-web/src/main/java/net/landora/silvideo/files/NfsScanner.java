@@ -47,18 +47,25 @@ public class NfsScanner {
 
     @PostConstruct
     public void init() throws IOException {
+//        StorageRoot root = new StorageRoot();
+//        root.setRoots( new ArrayList<>( rootRepository.findAll() ) );
+//        storageRepository.save( root );
 
         StorageRoot root = storageRepository.findAll().get( 0 );
 
         scanFolder( root );
 
-        storageRepository.save( root );
-
+//        storageRepository.save( root );
 //        Nfs3 nfs = new Nfs3( "quon:/var/nfs-roots/storage/Videos", new CredentialUnix( 1000, 1000, Collections.EMPTY_SET ), 3 );
 //        Nfs3File file = new Nfs3File( nfs, "/Muromi-san - 03.mkv" );
 //        System.out.println( file.length() );
 //        LocalRootConnection root = new LocalRootConnection();
 //        root.setPath( "/var/storage/Video/Anime" );
+//
+//        NfsRootConnection root = new NfsRootConnection();
+//        root.setNfsPath( "quon:/var/nfs-roots/storave/Videos" );
+//        root.setGroupId( 1000 );
+//        root.setUserId( 1000 );
 //
 //        rootRepository.save( root );
     }
@@ -76,8 +83,8 @@ public class NfsScanner {
                 scan( (VfsFile) child, root, relPath + child.getName() );
             } else {
                 scan( (VfsFolder) child, root, relPath + child.getName() + "/" );
-
             }
+
         }
     }
 
@@ -87,6 +94,8 @@ public class NfsScanner {
         if ( file != null && file.getLastModified().equals( vfs.getLastModified() ) && file.getSize().equals( vfs.getSize() ) ) {
             return;
         }
+
+        LoggerFactory.getLogger( getClass() ).warn( relPath );
 
         byte[] buffer = new byte[4096];
 

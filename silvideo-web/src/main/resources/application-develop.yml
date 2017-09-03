@@ -1,7 +1,7 @@
 ---
 spring:
     data:
-        mongodb.uri: "mongodb://localhost/silvideo-dev"
+        mongodb.uri: "mongodb://quon/silvideo-dev"
     freemarker:
         cache: false
     rabbitmq:
